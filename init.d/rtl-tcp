@@ -10,6 +10,11 @@
 # Description:       Put a long description of the service here
 ### END INIT INFO
 
+###
+# Author: iMakhonin aka Makigo [11.11.2016]
+# Email: work.makhonon@gmail.com
+###
+
 # Change the next 3 lines to suit where you install your script and what you want to call it
 DAEMON=rtl_tcp
 DAEMON_DIR=/usr/bin
