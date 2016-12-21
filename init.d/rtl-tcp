@@ -71,7 +71,7 @@ case "$1" in
         ;;
 
     *)
-        echo "Usage: /etc/init.d/$DAEMON_NAME {start|stop|restart|status}"
+        echo "Usage: service $DAEMON_NAME {start|stop|restart|status}"
         exit 1
         ;;
 
