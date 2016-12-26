@@ -23,8 +23,8 @@ DAEMON_NAME=rtl-tcp
 DEVICE="-d 0"         #number of drvice
 LISTIP="-a 0.0.0.0"   #listen ip address (0.0.0.0 listen all interfaces)
 PORT="-p 1482"        #listen port (default: 1234)
-PPM="-P 58"           #ppm_errors (default: 0)
-#SMPR="-s 16384000"   #samplerate
+PPM="-P 59"           #ppm_errors (default: 0)
+#SMPR="-s 1024"       #samplerate (default: 2048)
 
 # Add any command line options for your daemon here
 DAEMON_OPTS="$DEVICE $LISTIP $PORT $PPM $SMPR"
@@ -56,24 +56,19 @@ do_stop() {
 }
 
 case "$1" in
-
     start|stop)
         do_${1}
         ;;
-
     restart|reload|force-reload)
         do_stop
         do_start
         ;;
-
     status)
         status_of_proc "$DAEMON_NAME" "$DAEMON" && exit 0 || exit $?
         ;;
-
     *)
         echo "Usage: service $DAEMON_NAME {start|stop|restart|status}"
         exit 1
         ;;
-
 esac
 exit 0
